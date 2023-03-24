@@ -11,6 +11,20 @@
 <form action="/pokemon/<%= pokemon._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete Pokemon</button>
 </form>
+<h1>Edit Pokemon</h1>
+<form action="/pokemon/<%= pokemon._id %>?_method=PUT" method="POST">
+    <form action="/pokemon" method="POST">
+        <label>Name:
+        <input type="text" name="name" autocomplete="off">
+        </label><br>
+        <label>Type:
+        <input type="text" name="type" autocomplete="off">
+        </label><br>
+        <label>PokeDexNumber:
+        <input type="number" name="pokeDexNo" required pattern="\d{4}" autocomplete="off"> Format should be 0002
+        </label>
+    <button type="submit">Edit Pokemon</button>
+</form>
 
 </body>
 </html>

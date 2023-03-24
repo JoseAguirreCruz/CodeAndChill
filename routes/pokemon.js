@@ -12,5 +12,6 @@ router.get('/new', pokemonCtrl.new)
 router.route('/:id')
 .get(pokemonCtrl.show)
 .delete(pokemonCtrl.delete)
+.put(pokemonCtrl.update)
 
 module.exports = router;

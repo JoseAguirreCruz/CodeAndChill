@@ -5,7 +5,8 @@ module.exports = {
   new: newPokemon,
   create,
   show,
-  delete: destroyPokemon
+  delete: destroyPokemon,
+  update,
 
 }
 
@@ -62,4 +63,8 @@ function destroyPokemon(req,res){
   .catch(function(err){
     console.log(err)
   })
+}
+
+function update (req, res){
+
 }
