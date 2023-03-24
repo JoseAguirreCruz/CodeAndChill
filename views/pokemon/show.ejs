@@ -11,6 +11,7 @@
 <form action="/pokemon/<%= pokemon._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete Pokemon</button>
 </form>
+
 <h4>Edit Pokemon</h4>
 <form action="/pokemon/<%= pokemon._id %>?_method=PUT" method="POST">
     <form action="/pokemon" method="POST">
@@ -26,5 +27,38 @@
     <button type="submit">Edit Pokemon</button>
 </form>
 
+
+<h4>Add a Move to this Pokemon</h4>
+<form action="/pokemon/<%= pokemon._id %>/moves/?_method=PUT" method="POST">
+    <form action="/pokemon" method="POST">
+        <label>Name:
+        <input type="text" name="name" autocomplete="off">
+        </label><br>
+        <label>Damage:
+        <input type="number" name="damage" autocomplete="off">
+        </label><br>
+    <button type="submit">Add Move to This Pokemon</button>
+</form>
+
+
+
+<h4>Move List</h4>
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Damage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <% moves.forEach(function(m) { %>
+        <td><%= m.name  %></td>
+        <td><%= m.damage  %></td>
+      </tr>
+      <% }) %>
+ 
+    </tbody>
+ </table>
 </body>
 </html>

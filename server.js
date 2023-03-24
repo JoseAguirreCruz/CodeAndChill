@@ -11,7 +11,8 @@ require('./configs/database')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var pokemonRouter = require('./routes/pokemon')
+var pokemonRouter = require('./routes/pokemon');
+let movesRouter = require('./routes/moves');
 
 var app = express();
 
@@ -27,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
 
-app.use('/', indexRouter);
+app.use('/', movesRouter);
 app.use('/users', usersRouter);
 app.use('/pokemon', pokemonRouter)
 
