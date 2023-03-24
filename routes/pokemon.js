@@ -9,4 +9,6 @@ router.route('/')
 
 router.get('/new', pokemonCtrl.new)
 
+router.get('/:id', pokemonCtrl.show)
+
 module.exports = router;

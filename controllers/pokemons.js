@@ -3,7 +3,8 @@ const Pokemon = require('../models/pokemon')
 module.exports = {
   index,
   new: newPokemon,
-  create
+  create,
+  show
 
 }
 
@@ -36,5 +37,18 @@ function create(req,res){
   .catch(function(err){
     console.log(err)
     res.redirect('/pokemon')
+  })
+}
+
+function show(req, res){
+  Pokemon.findById(req.params.id)
+  .then(function(pokemon){
+    res.render('pokemon/show',{
+      title: `${pokemon.name}`,
+      pokemon
+    })
+  })
+  .catch(function(err){
+    console.log(err)
   })
 }

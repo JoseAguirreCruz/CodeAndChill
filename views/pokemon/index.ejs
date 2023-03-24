@@ -1,7 +1,7 @@
 
 <%- include('../partials/header') %>
 
-<a href="/pokemon/new">Add A Pokemon</a>
+
 
 
 
@@ -15,8 +15,8 @@
     </thead>
     <tbody>
       <tr>
-        <% allPokemon.forEach(function(p) { %>
-        <td><%= p.name  %></td>
+      <% allPokemon.forEach(function(p) { %>
+        <td><a href="pokemon/<%= p._id %>"><%= p.name %></a></td>
         <td><%= p.type  %></td>
         <td><%= p.pokeDexNo  %></td>
       </tr>

@@ -1,0 +1,26 @@
+### 
+
+
+
+
+
+- What is a schema?
+
+A blueprint for the mongoose model - it defines the structure of the data
+
+
+- What is a model?
+
+A model is piece of the MVC architecture that represents the data/database itself. A mongoose model is an instance of the schema and allows us to use model methods.
+
+
+
+- What is the difference?
+
+A schema contains attributes and defines structure of a document, and a model is an actual instance of that document
+
+
+
+- What is the relationship between them?
+
+One is like a recipe for a dish and the other is the dish itself
