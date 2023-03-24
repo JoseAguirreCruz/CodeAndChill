@@ -1,15 +1,40 @@
-// const Pokemon = require('')
+const Pokemon = require('../models/pokemon')
 
 module.exports = {
   index,
   new: newPokemon,
+  create
 
 }
 
 function index(req, res) {
-  res.render('pokemon/index', {})
+  Pokemon.find({})
+  .then(function(allPokemon){
+    res.render('pokemon/index', {
+      title: 'Pokemon List',
+      allPokemon
+    })
+  })
+  .catch(function(err){
+    console.log(err)
+  })
+
+ 
 }
 
 function newPokemon(req, res) {
-  res.render('pokemon/new')
+  res.render('pokemon/new', {
+    title: 'Add A Pokemon'
+  })
+}
+
+function create(req,res){
+  Pokemon.create(req.body)
+  .then(function(pokemon){
+    res.redirect('/pokemon')
+  })
+  .catch(function(err){
+    console.log(err)
+    res.redirect('/pokemon')
+  })
 }
