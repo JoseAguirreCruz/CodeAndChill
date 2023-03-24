@@ -11,7 +11,7 @@ function create(req, res){
         pokemon: req.params.id
     })
     .then(function(move){
-        res.redirect(`/pokemon${req.params.id}`)
+        res.redirect(`/pokemon/${req.params.id}`)
     })
     .catch(function(err){
         console.log(err)
