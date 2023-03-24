@@ -1,5 +1,18 @@
 const mongoose = require('mongoose')
 
+const moveSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  damage: {
+    type: Number
+  },
+  pokemon: [pokemonSchema]
+
+})
+
 const pokemonSchema = new mongoose.Schema({
   type: {
     type: String, 
