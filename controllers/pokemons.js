@@ -66,5 +66,11 @@ function destroyPokemon(req,res){
 }
 
 function update (req, res){
-
+  const filter = {_id: `${req.params.id}`}
+  const update = {req.body}
+  pokemon.findOneAndUpdate(filter, update)
+  .then(function(pokemon){
+    console.log(err)
+    res.redirect(`/pokemon/${req.params.id}`)
+  })
 }
