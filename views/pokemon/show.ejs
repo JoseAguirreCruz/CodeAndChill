@@ -42,5 +42,23 @@
 
 
 
+<h4>Move List</h4>
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Damage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <% moves.forEach(function(m) { %>
+        <td><%= m.name  %></td>
+        <td><%= m.damage  %></td>
+      </tr>
+      <% }) %>
+ 
+    </tbody>
+ </table>
 </body>
 </html>
