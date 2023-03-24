@@ -7,8 +7,10 @@
 <p>Type - <%= pokemon.type %></p>
 <p>Pokdex Number - <%= pokemon.pokeDexNo %></p>
 
-      
-    
-  
+
+<form action="/pokemon/<%= pokemon._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete Pokemon</button>
+</form>
+
 </body>
 </html>
