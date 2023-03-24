@@ -76,6 +76,6 @@ function update (req, res){
 
   Pokemon.findOneAndUpdate(filter, update)
   .then(function(pokemon){
-    res.redirect(`/pokemon/${req.params.id}`)
+    res.redirect('/pokemon')
   })
 }
