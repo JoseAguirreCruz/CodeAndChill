@@ -55,5 +55,11 @@ function show(req, res){
 }
 
 function destroyPokemon(req,res){
-  
+  Pokemon.findByIdAndDelete(req.params.id)
+  .then(function(deletedPoke){
+    res.redirect('/pokemon')
+  })
+  .catch(function(err){
+    console.log(err)
+  })
 }
